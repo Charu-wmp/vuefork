@@ -130,12 +130,20 @@ function initData(vm: Component) {
   data = vm._data = isFunction(data) ? getData(data, vm) : data || {}
   if (!isPlainObject(data)) {
     data = {}
+<<<<<<< HEAD:src/core/instance/state.ts
     __DEV__ &&
       warn(
         'data functions should return an object:\n' +
           'https://v2.vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
         vm
       )
+=======
+    process.env.NODE_ENV !== 'production' && warn(
+      'data functions should return an object:\n' +
+      'https://v2.vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
+      vm
+    )
+>>>>>>> chore: fix v2 links in comments (#12653) [ci skip]:src/core/instance/state.js
   }
   // proxy data on instance
   const keys = Object.keys(data)
